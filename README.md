@@ -9,7 +9,7 @@ To get All possible endpoint for single target not wild card
 ```
 ## For ease
 
-```sh
+```php
 (Thu Dec-12 3:50:45am)-(CPU 29.0%:0:Net 13)-(astute@fedora:~/tools/development)-(768K:14)
 > ln -s ultimate_endpoint.sh ultimate_endpoint
 (Thu Dec-12 3:50:58am)-(CPU 29.0%:0:Net 13)-(astute@fedora:~/tools/development)-(772K:15)
