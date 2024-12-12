@@ -6,6 +6,8 @@ To get All possible endpoint for single target not wild card
 > dont be script kiddie change the code according to the requirement
 > may be you will like to change the wordlist for fuzzing change on code
 > make sure you have all the tools ready and change the path of the tool accordingly
+> dont rely on tool check each output something gospider can breakout in that cat you can use grep get url ony
+gospider -s https://astute72.vercel.app --js -d 2 --sitemap --robots -w -r -t 30 | grep -Eo 'https?://([a-z0-9]+[.])*astute72.vercel.app.*'
 ```
 ## For ease
 
