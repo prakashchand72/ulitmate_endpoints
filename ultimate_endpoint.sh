@@ -33,11 +33,20 @@ echo "Running Feroxbuster..."
 feroxbuster -u "https://$targetname" -x php,html,git,yaml,conf,config,env,log,db,bak,asp,aspx,json,yml -o "$feroxbuster_output"
 echo "Feroxbuster results saved to $feroxbuster_output"
 
+# Run URLFinder
+urlfinder_input="$output_dir/domain.txt"
+echo "$targetname" > "$urlfinder_input"
+urlfinder_output="$output_dir/urlfinder_${targetname}_result.txt"
+echo "Running URLFinder..."
+urlfinder -d "$urlfinder_input" --silent -o "$urlfinder_output"
+echo "URLFinder results saved to $urlfinder_output"
+
 # Filter URLs with 200 status and save to separate file
 feroxbuster_live_output="$output_dir/feroxbuster_${targetname}_live.txt"
 echo "Filtering URLs with 200 status..."
 grep "200" "$feroxbuster_output" | grep -oP 'https?://[^\s]+' > "$feroxbuster_live_output"
 echo "Live URLs saved to $feroxbuster_live_output"
+
 
 # Completion message
 echo "All operations completed. Results are saved in $output_dir."
