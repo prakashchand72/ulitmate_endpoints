@@ -8,6 +8,7 @@ To get All possible endpoint for single target not wild card
 > make sure you have all the tools ready and change the path of the tool accordingly
 > dont rely on tool check each output something gospider can breakout in that cat you can use grep get url ony
 gospider -s https://astute72.vercel.app --js -d 2 --sitemap --robots -w -r -t 30 | grep -Eo 'https?://([a-z0-9]+[.])*astute72.vercel.app.*'
+- can use mantra tool to find exposure on js file [ grep js from gospider and pass to mantra ]
 ```
 ## For ease
 
